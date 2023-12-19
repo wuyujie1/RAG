@@ -1,0 +1,35 @@
+
+[PAGE]
+a2 ngi type transaction service
+<TABLE>
+Service,Transaction,TOT,Description
+Identification	Services,Civil	Fingerprint	Identification	Search,AMN,Amnesia Victim
+Identification	Services,,DEK,Known Deceased
+Identification	Services,,DEU,Unknown Deceased
+Identification	Services,,DOCE,Departmental Order Channeling Electronic
+Identification	Services,,EMUF,Electronic In/Manual Out User Fee Submissions
+Identification	Services,,FANC,Federal Applicant (No Charge)
+Identification	Services,,FAUF,Federal Applicant User Fee
+Identification	Services,,FNDR,Federal No Charge Direct Route
+Identification	Services,,MAP,Miscellaneous Applicant Civil
+Identification	Services,,MPR,Missing Person
+Identification	Services,,NFUE,Non-Federal User Fee Expedite
+Identification	Services,,NFUF,Non-Federal Applicant User Fee
+Identification	Services,,NNDR,Non-Federal No Charge Direct Route
+Identification	Services,Criminal	Fingerprint	Identification	Search,CAR,Criminal Tenprint Submission (Answer Required)
+Identification	Services,,CNA,Criminal Tenprint Submission (No Answer Necessary)
+Identification	Services,,CPDR,Criminal Fingerprint Direct Route
+Identification	Services,,CPNU,Criminal Fingerprint Processing Non-Urgent
+Identification	Services,,FIDR,Foreign Information Direct Route
+Identification	Services,Latent	Fingerprint	Identification	Submission,LFS,Latent Fingerprint Image Submission
+Identification	Services,Disposition Fingerprint Search,FDSP,Electronic Fingerprint Disposition Submission
+Identification	Services,Iris	Image	Identification	Submission,IIDS,Iris	Image	Identification	Submission
+Identification	Services,Rapid	Fingerprint	Identification	Search,RPIS,Rapid	Fingerprint	Identification	Search
+Information Services,Biometric/Biographic Audit Trail Retrieval,BATQ,Biometric Audit Trail Query
+Information Services,Biometric Image Retrieval,CPR,Subject Photo Request
+Information Services,,IRQ,Biometric Image/Feature Retrieval Request
+Information Services,Rap Back Subscription List Retrieval,RBRPT,Rap Back Subscription List Request
+Information Services,Rap Back Information Retrieval Submission,RBIHS,Rap Back Identity History Summary Request
+
+</TABLE>
+[/PAGE]
