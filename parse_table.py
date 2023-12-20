@@ -1,5 +1,5 @@
 import json
-import pandas as pd
+
 
 def parse_json_to_formatted_json_str(json_obj, indent):
     formatted_json = ""
@@ -62,6 +62,7 @@ def parse_table(table, page_num, table_num, out_dir):
         json.dump(json_content, f, indent=4)
     formatted_string = parse_string_to_readable_format(json_content)
     return formatted_string
+
 
 # def parse_table(table, page_num, table_num, out_dir):
 #     num_rows, num_cols = table.shape
