@@ -1,7 +1,5 @@
 import camelot
 import fitz
-from langchain_community.embeddings import HuggingFaceBgeEmbeddings
-
 from parse_table import parse_table
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.docstore.document import Document
@@ -11,17 +9,26 @@ from langchain.vectorstores import FAISS
 from langchain.embeddings import HuggingFaceEmbeddings
 from langchain.llms import CTransformers
 import sys
-from langchain.chains import LLMChain
-from accelerate import Accelerator
-from langchain.vectorstores import Chroma
-from langchain.llms import LlamaCpp
 import json
 from preprocess_page import preprocess_for_knowledge_base
+import pandas as pd
 
 
-def process_pdf(file_path):
-    context = ""
+def get_table_header(context):
+    reversed_context_strip_last_newline = context[::-1][1:]
+    header_start = reversed_context_strip_last_newline.index("\n")
+    header = context[len(context) - header_start-1:-1].strip(" ")
+    return header
+
+
+def process_pdf(file_path, embedding=False):
+    pages = []
+    contexts = ""
     with fitz.open(file_path) as doc:
+        context = ""
+        prev_table_header = ""
+        prev_table = ""
+        prev_table_start_index = -1
         for index, page in enumerate(doc):
             context += "\n[PAGE]\n"
             tables = camelot.read_pdf(file_path, pages=str(index + 1), flag_size=True)
@@ -37,57 +44,72 @@ def process_pdf(file_path):
                 print(f"Start processing page {index + 1} table {j + 1}")
                 if sorted_tables[j].parsing_report['whitespace'] == 100:
                     continue
-                context += "\n<TABLE>\n"
-                context += str(parse_table(sorted_tables[j].df, index + 1, j + 1, "./document/parsed_table"))
-                context += "\n</TABLE>\n"
+                curr_table_header = get_table_header(context)
+
+                # new table
+                if curr_table_header != prev_table_header:
+                    # write last table to context
+                    if str(prev_table) != "":
+                        context = context[:prev_table_start_index] + "\n<TABLE>\n" + str(parse_table(prev_table, index + 1, j + 1, "./document/parsed_table")) + "\n</TABLE>\n" + context[prev_table_start_index:]
+
+                    # update prev_table and header to current
+                    prev_table_header = curr_table_header
+                    prev_table = sorted_tables[j].df
+                    prev_table_start_index = len(context)
+                # same table across multiple pages
+                else:
+                    # first table
+                    if str(prev_table) == "":
+                        prev_table = sorted_tables[j].df
+                    # now they are all pd dataframes
+                    else:
+                        current_table = sorted_tables[j].df
+
+                        # Identifying common columns and rows
+                        common_columns = prev_table.columns.intersection(current_table.columns)
+                        common_rows = pd.merge(prev_table, current_table, how='inner')
+
+                        # overlapping columns
+                        if prev_table.iloc[0].equals(current_table.iloc[0]):
+                            prev_table = pd.merge(prev_table, current_table, on=common_columns.tolist(), how='outer')
+                        # columns not overlapping: treat as a new table
+                        else:
+                            if str(prev_table) != "":
+                                context = context[:prev_table_start_index] + "\n<TABLE>\n" + str(
+                                    parse_table(prev_table, index + 1, j + 1,
+                                                "./document/parsed_table")) + "\n</TABLE>\n" + context[
+                                                                                               prev_table_start_index:]
+
+                            # update prev_table and header to current
+                            prev_table_header = curr_table_header
+                            prev_table = sorted_tables[j].df
+                            prev_table_start_index = len(context)
+
                 last_y = y1
+
             # cut the footer
             footer_height = 54
             clip_rect = fitz.Rect(0, last_y, page.rect.width, page.rect.height - footer_height)
             context += preprocess_for_knowledge_base(page.get_textbox(clip_rect))
             context += "\n[/PAGE]\n"
+        if str(prev_table) != "":
+            context = context[:prev_table_start_index] + "\n<TABLE>\n" + str(
+                parse_table(prev_table, -1, -1, "./document/parsed_table")) + "\n</TABLE>\n" + context[prev_table_start_index:]
+        contexts += context
+        pages.append(Document(page_content=context, metadata={"source": "local"}))
     with open("context.txt", 'w', encoding='utf-8') as file:
         file.write(context)
 
+    save_docs_to_jsonl(pages, "context_embed.jsonl")
     print(len(context))
-    return context
-
-def process_pdf_embedding(file_path):
-    pages = []
-    with fitz.open(file_path) as doc:
-        for index, page in enumerate(doc):
-            context = ""
-            tables = camelot.read_pdf(file_path, pages=str(index + 1), flag_size=True)
-            last_y = 0
-            sorted_tables = sorted(tables, key=lambda t: t._bbox[1], reverse=True)
-            for j in range(tables.n):
-                x0, y0, x1, y1 = sorted_tables[j]._bbox
-                y0, y1 = page.rect.height - y1, page.rect.height - y0
-
-                clip_rect = fitz.Rect(0, last_y, page.rect.width, y0)
-                context += preprocess_for_knowledge_base(page.get_textbox(clip_rect)) + "\n"
-
-                print(f"Start processing page {index + 1} table {j + 1}")
-                if sorted_tables[j].parsing_report['whitespace'] == 100:
-                    continue
-                context += "\n<TABLE>\n"
-                context += str(parse_table(sorted_tables[j].df, index + 1, j + 1, "./document/parsed_table"))
-                context += "\n</TABLE>\n"
-                last_y = y1
-            # cut the footer
-            footer_height = 54
-            clip_rect = fitz.Rect(0, last_y, page.rect.width, page.rect.height - footer_height)
-            context += preprocess_for_knowledge_base(page.get_textbox(clip_rect))
-            pages.append(Document(page_content=context, metadata={"source": "local"}))
-            # context += "\n[/PAGE]\n"
-    save_docs_to_jsonl(pages, 'context_embed.jsonl')
-    return pages
+    return pages if embedding else context
 
 
 def save_docs_to_jsonl(array, file_path:str):
     with open(file_path, 'w') as jsonl_file:
         for doc in array:
             jsonl_file.write(doc.json() + '\n')
+
 
 def load_docs_from_jsonl(file_path):
     array = []
@@ -98,36 +120,33 @@ def load_docs_from_jsonl(file_path):
             array.append(obj)
     return array
 
+
 if __name__ == "__main__":
-    #documents = process_pdf_embedding("./document/EBTS v11.0_Final_508.pdf")
-    # documents = open("context.txt", "r", encoding="utf-8").read()
+    # documents = process_pdf("./document/test0.pdf", True)
     documents = load_docs_from_jsonl('context_embed.jsonl')
 
     text_splitter = RecursiveCharacterTextSplitter(
-        chunk_size=25000,
+        chunk_size=15000,
         chunk_overlap=1000)
 
     text_chunks = text_splitter.split_documents(documents)
 
-    # **Step 3: Load the Embedding Model***
 
-    embeddings = HuggingFaceEmbeddings(model_name='sentence-transformers/all-MiniLM-L6-v2',
+    embeddings = HuggingFaceEmbeddings(model_name='sentence-transformers/all-mpnet-base-v2',
                                        model_kwargs={'device': 'cuda'})
+    # embeddings = HuggingFaceEmbeddings(model_name='sentence-transformers/all-MiniLM-L6-v2',
+    #                                    model_kwargs={'device': 'cuda'})
 
-    # **Step 4: Convert the Text Chunks into Embeddings and Create a FAISS Vector Store***
     vector_store = FAISS.from_documents(text_chunks, embeddings)
-
-    ##**Step 5: Find the Top 3 Answers for the Query***
-
-    query = "What is TOT"
+    query = "List all the Type-2 subfields for TOT CAR and show min/max occurrence. For example: 2.001 LEN, min occurrence=1, max occurrence=1"
     docs = vector_store.similarity_search(query)
+    print(docs)
 
-    # print(docs)
     llm = CTransformers(model="W:\codellama\codellama-34b-instruct.Q4_K_M.gguf",
                         model_type="llama",
-                        config={'context_length': 100000,
+                        config={'context_length': 45000,
                                 'temperature': 0.01,
-                                'max_new_tokens': 10000})
+                                'max_new_tokens': 20000})
 
     template = """<<SYS>>You are a helpful, respectful, and honest assistant. Always answer as helpfully as possible
     using the context text provided. Your answers should only answer the question once and not have any text after
@@ -137,14 +156,11 @@ if __name__ == "__main__":
 
     [INST]
     Context:{context}
-    \n\n
     Question:{question}
     [/INST]
     """
 
     qa_prompt = PromptTemplate(template=template, input_variables=['context', 'question'])
-
-    # start=timeit.default_timer()
 
     chain = RetrievalQA.from_chain_type(llm=llm,
                                         chain_type='stuff',
@@ -152,21 +168,12 @@ if __name__ == "__main__":
                                         return_source_documents=True,
                                         chain_type_kwargs={'prompt': qa_prompt})
 
-    # response=chain({'query': "YOLOv7 is trained on which dataset"})
-
-    # end=timeit.default_timer()
-    # print(f"Here is the complete Response: {response}")
-
-    # print(f"Here is the final answer: {response['result']}")
-
-    # print(f"Time to generate response: {end-start}")
-
     while True:
         user_input = input(f"prompt:")
-        if query == 'exit':
+        if user_input == 'exit':
             print('Exiting')
             sys.exit()
-        if query == '':
+        if user_input == '':
             continue
         result = chain({'query': user_input})
         print(f"Answer:{result['result']}")

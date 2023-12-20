@@ -1,15 +1,26 @@
 import json
 import pandas as pd
 
-def parse_json_to_str(json_obj, indent):
+def parse_json_to_formatted_json_str(json_obj, indent):
     formatted_json = ""
     for key in json_obj:
         formatted_json += indent * " " + key + ":"
         if type(json_obj[key]) == dict:
-            formatted_json += "{\n" + parse_json_to_str(json_obj[key], indent + 4) + "\n" + indent * " " + "},\n"
+            formatted_json += "{\n" + parse_json_to_formatted_json_str(json_obj[key], indent + 4) + "\n" + indent * " " + "},\n"
         else:
             formatted_json += " " + str(json_obj[key]) + ",\n"
     return formatted_json
+
+
+def parse_string_to_readable_format(data):
+    readable_format = ""
+    for category, attributes in data.items():
+        readable_format += f"Type: {category}\n"
+        for key, value in attributes.items():
+            readable_format += f"{key} is {value}\n" if value != "" else ""
+        readable_format += "\n"
+    return readable_format
+
 
 def parse_table(table, page_num, table_num, out_dir):
     num_rows, num_cols = table.shape
@@ -46,10 +57,11 @@ def parse_table(table, page_num, table_num, out_dir):
                     json_content[col_names[i]][row_names[j]].append(target)
             else:
                 json_content[col_names[i]][row_names[j]] = target
-    formatted_json = parse_json_to_str(json_content, 0)
+    # formatted_json = parse_json_to_formatted_json_str(json_content, 0)
     with open(f"{out_dir}/page_{page_num}_table_{table_num}.json", 'w') as f:
         json.dump(json_content, f, indent=4)
-    return formatted_json
+    formatted_string = parse_string_to_readable_format(json_content)
+    return formatted_string
 
 # def parse_table(table, page_num, table_num, out_dir):
 #     num_rows, num_cols = table.shape
