@@ -122,20 +122,24 @@ def load_docs_from_jsonl(file_path):
 
 
 if __name__ == "__main__":
-    # documents = process_pdf("./document/test0.pdf", True)
+    # documents = process_pdf("./document/EBTS v11.0_Final_508.pdf", True)
     documents = load_docs_from_jsonl('context_embed.jsonl')
 
     text_splitter = RecursiveCharacterTextSplitter(
-        chunk_size=15000,
+        chunk_size=10000,
         chunk_overlap=1000)
 
     text_chunks = text_splitter.split_documents(documents)
 
 
-    embeddings = HuggingFaceEmbeddings(model_name='sentence-transformers/all-mpnet-base-v2',
-                                       model_kwargs={'device': 'cuda'})
-    # embeddings = HuggingFaceEmbeddings(model_name='sentence-transformers/all-MiniLM-L6-v2',
+    # embeddings = HuggingFaceEmbeddings(model_name='sentence-transformers/all-mpnet-bas e-v2',
     #                                    model_kwargs={'device': 'cuda'})
+    embeddings = HuggingFaceEmbeddings(model_name='BAAI/bge-large-en',
+                                       model_kwargs={'device': 'cuda'})
+    # from langchain.embeddings import VoyageEmbeddings
+    # documents = [str(item) for item in documents]
+    # embeddings = VoyageEmbeddings(model='voyage-01', voyage_api_key="pa-_RGKdYAJKK1UN1BeOx7avmXmNWz_1H8T3XbKxSv6BL8")
+    # document_embeddings = embeddings.embed_documents(documents)
 
     vector_store = FAISS.from_documents(text_chunks, embeddings)
     query = "List all the Type-2 subfields for TOT CAR and show min/max occurrence. For example: 2.001 LEN, min occurrence=1, max occurrence=1"
@@ -144,7 +148,7 @@ if __name__ == "__main__":
 
     llm = CTransformers(model="W:\codellama\codellama-34b-instruct.Q4_K_M.gguf",
                         model_type="llama",
-                        config={'context_length': 45000,
+                        config={'context_length': 40000,
                                 'temperature': 0.01,
                                 'max_new_tokens': 20000})
 
@@ -164,7 +168,7 @@ if __name__ == "__main__":
 
     chain = RetrievalQA.from_chain_type(llm=llm,
                                         chain_type='stuff',
-                                        retriever=vector_store.as_retriever(search_kwargs={'k': 3}),
+                                        retriever=vector_store.as_retriever(search_kwargs={'k': 4}),
                                         return_source_documents=True,
                                         chain_type_kwargs={'prompt': qa_prompt})
 
