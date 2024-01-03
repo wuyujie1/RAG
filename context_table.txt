@@ -1,0 +1,1044 @@
+
+[PAGE]
+appendix summary logical record layout type2 identification verification transaction 1.0 introduction appendix present summary logical record layout identification verification transaction .
+table d1 summary representation identification verification transaction .
+detailed specification individual field record set see appendix c. 2.0 interpretation table column header top page select particular transaction .
+row header left margin give tag number id field .
+cell intersection given row column give minimum maximum occurrence field row transaction column .
+example cardinality 0 .. 9 field optional possibility 9 occurrence .
+cardinality 1 .. 9 field mandatory possibility 9 occurrence .
+cell blank field used record .
+minimum maximum value one number given .
+see appendix reference note following table d1 pertaining use record field footnote .
+[/PAGE]
+
+[PAGE]
+d1 summary field list identification verification transaction minimummaximum occurrence element logical record type
+
+<TABLE>
+Type: AMN
+2.001 LEN is 1
+2.002 IDC is 1
+2.005 RET is 1
+2.006 ATN is 0..1
+2.007 SCO is 0..9
+2.009 OCA is 0..1
+2.017 MNU is 0..4
+2.018 NAM is 1, check superscript reference 4
+2.021 CTZ is 0..10
+2.022 DOB is 1..5, check superscript reference 4
+2.024 SEX is 1
+2.025 RAC is 1
+2.026 SMT is 0..10
+2.027 HGT is 1
+2.029 WGT is 1
+2.031 EYE is 1
+2.032 HAI is 1
+2.036 PHT is 0..1
+2.038 DPR is 1
+2.041 RES is 0..1
+2.056 ICO is 0..1
+2.067 IMA is 0..1
+2.070 RAP is 0..1
+2.071 ACN is 0..1
+2.073 CRI is 1..3
+2.084 AMP is 0..13, check superscript reference 7
+2.096 RPR is 0..1
+2.098 NDR is 0..10
+2.2037 ESI is 0..1
+
+Type: CAR
+2.001 LEN is 1
+2.002 IDC is 1
+2.005 RET is 1
+2.006 ATN is 0..1
+2.007 SCO is 0..9
+2.009 OCA is 0..1
+2.014 FBI is 0..5, check superscript reference 5
+2.015 SID is 0..1, check superscript reference 6
+2.016 SOC is 0..4
+2.017 MNU is 0..4
+2.018 NAM is 1
+2.019 AKA is 0..10
+2.020 POB is 1
+2.021 CTZ is 0..10
+2.022 DOB is 1..5
+2.024 SEX is 1
+2.025 RAC is 1
+2.026 SMT is 0..10
+2.027 HGT is 1
+2.029 WGT is 1
+2.031 EYE is 1
+2.032 HAI is 1
+2.035 PPA is 0..1
+2.036 PHT is 0..1
+2.039 EAD is 0..1
+2.040 OCP is 0..1
+2.041 RES is 0..1
+2.045 DOA is 1
+2.047 ASL is 1..999, check superscript reference 2
+2.051 CSL is 0..999
+2.056 ICO is 0..1
+2.067 IMA is 0..1
+2.070 RAP is 0..1
+2.073 CRI is 1..3
+2.084 AMP is 0..13, check superscript reference 7
+2.087 TAA is 0..1
+2.096 RPR is 0..1
+2.098 NDR is 0..10
+2.2015 RBXD is 0..1
+2.2020 RBR is 0..9
+2.2037 ESI is 0..1
+2.2040 RBT is 0..40
+2.2062 RBNF is 0..1
+2.2063 RBOO is 0..1
+2.2064 RBUD is 0..10
+2.2065 RBC is 0..1
+2.2067 RBDI is 0..1
+2.2070 RBATN is 0..1
+
+Type: CNA
+2.001 LEN is 1
+2.002 IDC is 1
+2.005 RET is 1, check superscript reference 1
+2.009 OCA is 0..1
+2.014 FBI is 0..5, check superscript reference 5
+2.015 SID is 0..1, check superscript reference 6
+2.016 SOC is 0..4
+2.017 MNU is 0..4
+2.018 NAM is 1
+2.019 AKA is 0..10
+2.020 POB is 1
+2.021 CTZ is 0..10
+2.022 DOB is 1..5
+2.024 SEX is 1
+2.025 RAC is 1
+2.026 SMT is 0..10
+2.027 HGT is 1
+2.029 WGT is 1
+2.031 EYE is 1
+2.032 HAI is 1
+2.035 PPA is 0..1
+2.036 PHT is 0..1
+2.039 EAD is 0..1
+2.040 OCP is 0..1
+2.041 RES is 0..1
+2.045 DOA is 1
+2.047 ASL is 1..999, check superscript reference 2
+2.051 CSL is 0..999
+2.056 ICO is 0..1
+2.067 IMA is 0..1
+2.073 CRI is 1..3
+2.084 AMP is 0..13, check superscript reference 7
+2.087 TAA is 0..1
+
+Type: CPDR
+2.001 LEN is 1
+2.002 IDC is 1
+2.005 RET is 1
+2.006 ATN is 0..1
+2.007 SCO is 0..9
+2.009 OCA is 0..1
+2.014 FBI is 0..5, check superscript reference 5
+2.015 SID is 0..1, check superscript reference 6
+2.016 SOC is 0..4
+2.017 MNU is 0..4
+2.018 NAM is 1
+2.019 AKA is 0..10
+2.020 POB is 1
+2.021 CTZ is 0..10
+2.022 DOB is 1..5
+2.024 SEX is 1
+2.025 RAC is 1
+2.026 SMT is 0..10
+2.027 HGT is 1
+2.029 WGT is 1
+2.031 EYE is 1
+2.032 HAI is 1
+2.035 PPA is 0..1
+2.036 PHT is 0..1
+2.039 EAD is 0..1
+2.040 OCP is 0..1
+2.041 RES is 0..1
+2.043 TSR is 1
+2.045 DOA is 1
+2.047 ASL is 1..999, check superscript reference 2
+2.051 CSL is 0..999
+2.056 ICO is 0..1
+2.067 IMA is 0..1
+2.070 RAP is 0..1
+2.073 CRI is 1..3
+2.084 AMP is 0..13, check superscript reference 7
+2.087 TAA is 0..1
+2.096 RPR is 0..1
+2.098 NDR is 0..10
+2.2015 RBXD is 0..1
+2.2020 RBR is 0..9
+2.2037 ESI is 0..1
+2.2040 RBT is 0..40
+2.2062 RBNF is 0..1
+2.2063 RBOO is 0..1
+2.2064 RBUD is 0..10
+2.2065 RBC is 0..1
+2.2067 RBDI is 0..1
+2.2070 RBATN is 0..1
+
+Type: CPNU
+2.001 LEN is 1
+2.002 IDC is 1
+2.005 RET is 1
+2.006 ATN is 0..1
+2.007 SCO is 0..9
+2.009 OCA is 0..1
+2.014 FBI is 0..5, check superscript reference 5
+2.015 SID is 0..1, check superscript reference 6
+2.016 SOC is 0..4
+2.017 MNU is 0..4
+2.018 NAM is 1
+2.019 AKA is 0..10
+2.020 POB is 1
+2.021 CTZ is 0..10
+2.022 DOB is 1..5
+2.024 SEX is 1
+2.025 RAC is 1
+2.026 SMT is 0..10
+2.027 HGT is 1
+2.029 WGT is 1
+2.031 EYE is 1
+2.032 HAI is 1
+2.035 PPA is 0..1
+2.036 PHT is 0..1
+2.039 EAD is 0..1
+2.040 OCP is 0..1
+2.041 RES is 0..1
+2.043 TSR is 0..1
+2.045 DOA is 1
+2.046 DOS is 0..1
+2.047 ASL is 1..999, check superscript reference 2
+2.051 CSL is 0..999
+2.056 ICO is 0..1
+2.067 IMA is 0..1
+2.070 RAP is 0..1
+2.073 CRI is 1..3
+2.084 AMP is 0..13, check superscript reference 7
+2.087 TAA is 0..1
+2.096 RPR is 0..1
+2.098 NDR is 0..10
+2.2015 RBXD is 0..1
+2.2020 RBR is 0..9
+2.2037 ESI is 0..1
+2.2040 RBT is 0..40
+2.2062 RBNF is 0..1
+2.2063 RBOO is 0..1
+2.2064 RBUD is 0..10
+2.2065 RBC is 0..1
+2.2067 RBDI is 0..1
+2.2070 RBATN is 0..1
+
+Type: DEK
+2.001 LEN is 1
+2.002 IDC is 1
+2.005 RET is 1
+2.006 ATN is 0..1
+2.007 SCO is 0..9
+2.009 OCA is 0..1
+2.014 FBI is 0..5
+2.015 SID is 0..1
+2.016 SOC is 0..4
+2.017 MNU is 0..4
+2.018 NAM is 1
+2.019 AKA is 0..10
+2.020 POB is 0..1
+2.021 CTZ is 0..10
+2.022 DOB is 1..5
+2.024 SEX is 1
+2.025 RAC is 1
+2.026 SMT is 0..10
+2.027 HGT is 1
+2.029 WGT is 1
+2.031 EYE is 1
+2.032 HAI is 1
+2.036 PHT is 0..1
+2.038 DPR is 1
+2.039 EAD is 0..1
+2.041 RES is 0..1
+2.056 ICO is 0..1
+2.067 IMA is 0..1
+2.070 RAP is 0..1
+2.073 CRI is 1..3
+2.084 AMP is 0..13, check superscript reference 7
+2.096 RPR is 0..1
+2.098 NDR is 0..10
+2.2037 ESI is 0..1
+
+Type: DEU
+2.001 LEN is 1
+2.002 IDC is 1
+2.005 RET is 1
+2.006 ATN is 0..1
+2.007 SCO is 0..9
+2.009 OCA is 0..1
+2.017 MNU is 0..4
+2.018 NAM is 1, check superscript reference 4
+2.021 CTZ is 0..10
+2.022 DOB is 1..5, check superscript reference 4
+2.024 SEX is 1
+2.025 RAC is 0..1
+2.026 SMT is 0..10
+2.027 HGT is 1
+2.029 WGT is 1
+2.031 EYE is 1
+2.032 HAI is 1
+2.036 PHT is 0..1
+2.038 DPR is 1
+2.041 RES is 0..1
+2.056 ICO is 0..1
+2.067 IMA is 0..1
+2.070 RAP is 0..1
+2.073 CRI is 1..3
+2.084 AMP is 0..13, check superscript reference 7
+2.096 RPR is 0..1
+2.098 NDR is 0..10
+2.2037 ESI is 0..1
+
+Type: DOCE
+2.001 LEN is 1
+2.002 IDC is 1
+2.005 RET is 1
+2.006 ATN is 0..1
+2.007 SCO is 0..9
+2.009 OCA is 0..1
+2.014 FBI is 0..5
+2.015 SID is 0..1
+2.016 SOC is 0..4
+2.017 MNU is 0..4
+2.018 NAM is 1
+2.019 AKA is 0..10
+2.020 POB is 1
+2.021 CTZ is 0..10
+2.022 DOB is 1..5
+2.024 SEX is 1
+2.025 RAC is 1
+2.026 SMT is 0..10
+2.027 HGT is 1
+2.029 WGT is 1
+2.031 EYE is 1
+2.032 HAI is 1
+2.037 RFP is 1
+2.038 DPR is 1
+2.039 EAD is 0..1
+2.040 OCP is 0..1
+2.041 RES is 0..1
+2.043 TSR is 0..1
+2.067 IMA is 0..1
+2.070 RAP is 0..1
+2.073 CRI is 1..3
+2.084 AMP is 0..13, check superscript reference 7
+
+Type: EMUF
+2.001 LEN is 1
+2.002 IDC is 1
+2.005 RET is 1
+2.006 ATN is 0..1
+2.007 SCO is 0..9
+2.009 OCA is 0..1
+2.014 FBI is 0..5
+2.015 SID is 0..1
+2.016 SOC is 0..4
+2.017 MNU is 0..4
+2.018 NAM is 1
+2.019 AKA is 0..10
+2.020 POB is 1
+2.021 CTZ is 0..10
+2.022 DOB is 1..5
+2.024 SEX is 1
+2.025 RAC is 1
+2.026 SMT is 0..10
+2.027 HGT is 1
+2.029 WGT is 1
+2.031 EYE is 1
+2.032 HAI is 1
+2.037 RFP is 1
+2.038 DPR is 1
+2.039 EAD is 0..1
+2.040 OCP is 0..1
+2.041 RES is 0..1
+2.042 MIL is 0..1
+2.043 TSR is 0..1
+2.067 IMA is 0..1
+2.070 RAP is 0..1
+2.073 CRI is 1..3
+2.084 AMP is 0..13, check superscript reference 7
+
+Type: ERRT
+2.001 LEN is 1
+2.002 IDC is 1
+2.006 ATN is 0..1
+2.007 SCO is 0..9
+2.009 OCA is 0..1
+2.014 FBI is 0..5
+2.015 SID is 0..1
+2.017 MNU is 0..4
+2.060 MSG is 1..11
+2.073 CRI is 0..3
+2.2007 SDOB is 1
+2.2008 SNAM is 1
+
+Type: FANC
+2.001 LEN is 1
+2.002 IDC is 1
+2.005 RET is 1
+2.006 ATN is 0..1
+2.007 SCO is 0..9
+2.009 OCA is 0..1
+2.014 FBI is 0..5
+2.016 SOC is 0..4
+2.017 MNU is 0..4, check superscript reference 3
+2.018 NAM is 1
+2.019 AKA is 0..10
+2.020 POB is 1
+2.021 CTZ is 0..10
+2.022 DOB is 1..5
+2.024 SEX is 1
+2.025 RAC is 1
+2.026 SMT is 0..10
+2.027 HGT is 1
+2.029 WGT is 1
+2.031 EYE is 1
+2.032 HAI is 1
+2.037 RFP is 1
+2.038 DPR is 1
+2.039 EAD is 0..1
+2.040 OCP is 0..1
+2.041 RES is 0..1
+2.042 MIL is 0..1
+2.067 IMA is 0..1
+2.070 RAP is 0..1
+2.073 CRI is 1..3
+2.084 AMP is 0..13, check superscript reference 7
+2.096 RPR is 0..1
+2.098 NDR is 0..10
+2.2015 RBXD is 0..1
+2.2020 RBR is 0..9
+2.2037 ESI is 0..1
+2.2040 RBT is 0..40
+2.2062 RBNF is 0..1
+2.2063 RBOO is 0..1
+2.2064 RBUD is 0..10
+2.2065 RBC is 0..1
+2.2070 RBATN is 0..1
+2.2071 RBST is 0..1
+
+Type: FAUF
+2.001 LEN is 1
+2.002 IDC is 1
+2.005 RET is 1
+2.006 ATN is 0..1
+2.007 SCO is 0..9
+2.009 OCA is 0..1
+2.014 FBI is 0..5
+2.016 SOC is 0..4
+2.017 MNU is 0..4, check superscript reference 3
+2.018 NAM is 1
+2.019 AKA is 0..10
+2.020 POB is 1
+2.021 CTZ is 0..10
+2.022 DOB is 1..5
+2.024 SEX is 1
+2.025 RAC is 1
+2.026 SMT is 0..10
+2.027 HGT is 1
+2.029 WGT is 1
+2.031 EYE is 1
+2.032 HAI is 1
+2.037 RFP is 1
+2.038 DPR is 1
+2.039 EAD is 0..1
+2.040 OCP is 0..1
+2.041 RES is 0..1
+2.042 MIL is 0..1
+2.067 IMA is 0..1
+2.070 RAP is 0..1
+2.073 CRI is 1..3
+2.084 AMP is 0..13, check superscript reference 7
+2.096 RPR is 0..1
+2.098 NDR is 0..10
+2.2015 RBXD is 0..1
+2.2020 RBR is 0..9
+2.2037 ESI is 0..1
+2.2040 RBT is 0..40
+2.2062 RBNF is 0..1
+2.2063 RBOO is 0..1
+2.2064 RBUD is 0..10
+2.2065 RBC is 0..1
+2.2070 RBATN is 0..1
+2.2071 RBST is 0..1
+
+Type: FDSP
+2.001 LEN is 1
+2.002 IDC is 1
+2.006 ATN is 0..1
+2.007 SCO is 0..9
+2.009 OCA is 0..1
+2.014 FBI is 0..5
+2.015 SID is 0..1
+2.016 SOC is 0..4
+2.017 MNU is 0..4
+2.018 NAM is 1
+2.019 AKA is 0..10
+2.020 POB is 1
+2.021 CTZ is 0..10
+2.022 DOB is 1..5
+2.024 SEX is 1
+2.025 RAC is 1
+2.026 SMT is 0..10
+2.027 HGT is 0..1
+2.029 WGT is 0..1
+2.031 EYE is 0..1
+2.032 HAI is 0..1
+2.038 DPR is 1
+2.045 DOA is 1
+2.051 CSL is 1..999, check superscript reference 12
+2.067 IMA is 0..1
+2.070 RAP is 0..1
+2.073 CRI is 0..3
+2.084 AMP is 0..13, check superscript reference 7
+2.096 RPR is 0..1
+2.2021 IFS is 1
+
+Type: FIDR
+2.001 LEN is 1
+2.002 IDC is 1
+2.005 RET is 1
+2.006 ATN is 0..1
+2.007 SCO is 0..9
+2.009 OCA is 1
+2.014 FBI is 0..5
+2.016 SOC is 0..4
+2.017 MNU is 0..4
+2.018 NAM is 1
+2.019 AKA is 0..10
+2.020 POB is 0..1
+2.021 CTZ is 0..10
+2.022 DOB is 0..5
+2.024 SEX is 0..1
+2.025 RAC is 0..1
+2.026 SMT is 0..10
+2.027 HGT is 0..1
+2.029 WGT is 0..1
+2.031 EYE is 0..1
+2.032 HAI is 0..1
+2.037 RFP is 1
+2.038 DPR is 1
+2.046 DOS is 0..1
+2.067 IMA is 0..1
+2.070 RAP is 0..1
+2.073 CRI is 1..3
+2.084 AMP is 0..13, check superscript reference 7
+2.096 RPR is 0..1
+2.098 NDR is 0..10
+2.2046 TLI is 1
+2.2051 HNOTI is 0..1
+2.2072 POC is 0..1
+2.2105 FI is 0..999
+
+Type: FNDR
+2.001 LEN is 1
+2.002 IDC is 1
+2.005 RET is 1
+2.006 ATN is 0..1
+2.007 SCO is 0..9
+2.009 OCA is 0..1
+2.014 FBI is 0..5
+2.016 SOC is 0..4
+2.017 MNU is 0..4, check superscript reference 3
+2.018 NAM is 1
+2.019 AKA is 0..10
+2.020 POB is 1
+2.021 CTZ is 0..10
+2.022 DOB is 1..5
+2.024 SEX is 1
+2.025 RAC is 1
+2.026 SMT is 0..10
+2.027 HGT is 1
+2.029 WGT is 1
+2.031 EYE is 1
+2.032 HAI is 1
+2.037 RFP is 1
+2.038 DPR is 1
+2.039 EAD is 0..1
+2.040 OCP is 0..1
+2.041 RES is 0..1
+2.042 MIL is 0..1
+2.043 TSR is 1
+2.067 IMA is 0..1
+2.070 RAP is 0..1
+2.073 CRI is 1..3
+2.084 AMP is 0..13, check superscript reference 7
+2.096 RPR is 0..1
+2.098 NDR is 0..10
+2.2015 RBXD is 0..1
+2.2020 RBR is 0..9
+2.2037 ESI is 0..1
+2.2040 RBT is 0..40
+2.2062 RBNF is 0..1
+2.2063 RBOO is 0..1
+2.2064 RBUD is 0..10
+2.2065 RBC is 0..1
+2.2070 RBATN is 0..1
+2.2071 RBST is 0..1
+
+Type: FVR
+2.001 LEN is 1
+2.002 IDC is 1
+2.005 RET is 1
+2.006 ATN is 0..1
+2.007 SCO is 0..9
+2.009 OCA is 0..1
+2.014 FBI is 1
+2.015 SID is 0..1
+2.016 SOC is 0..4
+2.017 MNU is 0..4
+2.018 NAM is 1
+2.019 AKA is 0..10
+2.020 POB is 1
+2.021 CTZ is 0..10
+2.022 DOB is 1..5
+2.024 SEX is 0..1
+2.025 RAC is 0..1
+2.026 SMT is 0..10
+2.027 HGT is 0..1
+2.029 WGT is 0..1
+2.031 EYE is 0..1
+2.032 HAI is 0..1
+2.038 DPR is 1
+2.042 MIL is 0..1
+2.043 TSR is 0..1
+2.056 ICO is 0..1
+2.067 IMA is 0..1
+2.070 RAP is 0..1
+2.073 CRI is 1..3
+2.084 AMP is 0..13, check superscript reference 7
+
+
+</TABLE>
+
+[/PAGE]
+
+[PAGE]
+d1 summary field list identification verification transaction minimummaximum occurrence element logical record type
+
+[/PAGE]
+
+[PAGE]
+d1 summary field list identification verification transaction minimummaximum occurrence element logical record type
+
+[/PAGE]
+
+[PAGE]
+d1 summary field list identification verification transaction minimummaximum occurrence element logical record type
+
+<TABLE>
+Type: IIDS
+2.001 LEN is 1
+2.002 IDC is 1
+2.006 ATN is 0..1
+2.007 SCO is 0..9
+2.009 OCA is 0..1
+2.014 FBI is 0..1
+2.015 SID is 0..1
+2.017 MNU is 0..4
+2.018 NAM is 0..1
+2.070 RAP is 0..1
+2.073 CRI is 0..3
+2.096 RPR is 0..1
+
+Type: LFS
+2.001 LEN is 1
+2.002 IDC is 1
+2.003 FFN is 0..1
+2.006 ATN is 1
+2.007 SCO is 0..9
+2.017 MNU is 0..4
+2.020 POB is 0..1
+2.023 AGR is 0..1
+2.024 SEX is 0..1
+2.025 RAC is 0..1
+2.026 SMT is 0..10
+2.028 HTR is 0..1
+2.030 WTR is 0..1
+2.031 EYE is 0..1
+2.032 HAI is 0..1
+2.034 PAT is 0..10
+2.044 GEO is 0..5
+2.047 ASL is 0..999, check superscript reference 3
+2.053 OFC is 1
+2.061 CST is 1
+2.067 IMA is 0..1
+2.070 RAP is 0..1
+2.073 CRI is 0..3
+2.074 FGP is 0..10
+2.083 ULF is 0..1
+2.088 NOT is 0..1
+2.2030 PPD is 0..10
+
+Type: LSR
+2.001 LEN is 1
+2.002 IDC is 1
+2.003 FFN is 0..1
+2.006 ATN is 0..1
+2.007 SCO is 0..9
+2.012 LCN is 0..1
+2.013 LCX is 0..1
+2.014 FBI is 0..1, check superscript reference 10
+2.015 SID is 0..5, check superscript reference 10
+2.016 SOC is 0..4, check superscript reference 11
+2.017 MNU is 0..4, check superscript reference 11
+2.018 NAM is 0..1, check superscript reference 10
+2.019 AKA is 0..10
+2.020 POB is 0..1, check superscript reference 10
+2.021 CTZ is 0..10, check superscript reference 11
+2.022 DOB is 0..5, check superscript reference 11
+2.024 SEX is 0..1, check superscript reference 11
+2.025 RAC is 0..1, check superscript reference 11
+2.026 SMT is 0..10, check superscript reference 11
+2.027 HGT is 0..1, check superscript reference 11
+2.029 WGT is 0..1, check superscript reference 11
+2.031 EYE is 0..1, check superscript reference 11
+2.032 HAI is 0..1, check superscript reference 11
+2.033 FPC is 0..1
+2.034 PAT is 0..10, check superscript reference 11
+2.035 PPA is 0..1
+2.038 DPR is 0..1
+2.059 SRF is 1
+2.060 MSG is 0..1
+2.061 CST is 1
+2.071 ACN is 0..1
+2.073 CRI is 0..3
+2.074 FGP is 0..10
+2.075 ERS is 0..1
+2.2031 BIA is 0..1
+
+Type: MAP
+2.001 LEN is 1
+2.002 IDC is 1
+2.005 RET is 1
+2.006 ATN is 0..1
+2.007 SCO is 0..9
+2.009 OCA is 0..1
+2.014 FBI is 0..5
+2.015 SID is 0..1
+2.016 SOC is 0..4
+2.017 MNU is 0..4
+2.018 NAM is 1
+2.019 AKA is 0..10
+2.020 POB is 1
+2.021 CTZ is 0..10
+2.022 DOB is 1..5
+2.024 SEX is 1
+2.025 RAC is 1
+2.026 SMT is 0..10
+2.027 HGT is 1
+2.029 WGT is 1
+2.031 EYE is 1
+2.032 HAI is 1
+2.037 RFP is 1
+2.038 DPR is 1
+2.039 EAD is 0..1
+2.040 OCP is 0..1
+2.041 RES is 0..1
+2.067 IMA is 0..1
+2.070 RAP is 0..1
+2.073 CRI is 1..3
+2.084 AMP is 0..13, check superscript reference 7
+2.096 RPR is 0..1
+2.098 NDR is 0..10
+2.2015 RBXD is 0..1
+2.2020 RBR is 0..9
+2.2037 ESI is 0..1
+2.2040 RBT is 0..40
+2.2062 RBNF is 0..1
+2.2063 RBOO is 0..1
+2.2064 RBUD is 0..10
+2.2065 RBC is 0..1
+2.2070 RBATN is 0..1
+2.2071 RBST is 0..1
+
+Type: MPR
+2.001 LEN is 1
+2.002 IDC is 1
+2.005 RET is 1
+2.006 ATN is 0..1
+2.007 SCO is 0..9
+2.009 OCA is 0..1
+2.016 SOC is 0..4
+2.017 MNU is 0..4
+2.018 NAM is 1
+2.019 AKA is 0..10
+2.020 POB is 0..1
+2.021 CTZ is 0..10
+2.022 DOB is 1..5
+2.024 SEX is 1
+2.025 RAC is 1
+2.026 SMT is 0..10
+2.027 HGT is 1
+2.029 WGT is 1
+2.031 EYE is 1
+2.032 HAI is 1
+2.036 PHT is 0..1
+2.038 DPR is 1
+2.039 EAD is 0..1
+2.040 OCP is 0..1
+2.041 RES is 0..1
+2.056 ICO is 0..1
+2.067 IMA is 0..1
+2.070 RAP is 0..1
+2.071 ACN is 0..1
+2.073 CRI is 1..3
+2.084 AMP is 0..13, check superscript reference 7
+2.096 RPR is 0..1
+2.098 NDR is 0..10
+2.2037 ESI is 0..1
+
+Type: NFUE
+2.001 LEN is 1
+2.002 IDC is 1
+2.005 RET is 1
+2.006 ATN is 0..1
+2.007 SCO is 0..9
+2.009 OCA is 0..1
+2.014 FBI is 0..5
+2.015 SID is 0..1
+2.016 SOC is 0..4
+2.017 MNU is 0..4
+2.018 NAM is 1
+2.019 AKA is 0..10
+2.020 POB is 1
+2.021 CTZ is 0..10
+2.022 DOB is 1..5
+2.024 SEX is 1
+2.025 RAC is 1
+2.026 SMT is 0..10
+2.027 HGT is 1
+2.029 WGT is 1
+2.031 EYE is 1
+2.032 HAI is 1
+2.037 RFP is 1
+2.038 DPR is 1
+2.039 EAD is 0..1
+2.040 OCP is 0..1
+2.041 RES is 0..1
+2.043 TSR is 0..1
+2.067 IMA is 0..1
+2.070 RAP is 0..1
+2.073 CRI is 1..3
+2.084 AMP is 0..13, check superscript reference 7
+2.096 RPR is 0..1
+2.098 NDR is 0..10
+2.2015 RBXD is 0..1
+2.2020 RBR is 0..9
+2.2037 ESI is 0..1
+2.2040 RBT is 0..40
+2.2062 RBNF is 0..1
+2.2063 RBOO is 0..1
+2.2064 RBUD is 0..10
+2.2065 RBC is 0..1
+2.2070 RBATN is 0..1
+2.2071 RBST is 0..1
+
+Type: NFUF
+2.001 LEN is 1
+2.002 IDC is 1
+2.005 RET is 1
+2.006 ATN is 0..1
+2.007 SCO is 0..9
+2.009 OCA is 0..1
+2.014 FBI is 0..5
+2.015 SID is 0..1
+2.016 SOC is 0..4
+2.017 MNU is 0..4
+2.018 NAM is 1
+2.019 AKA is 0..10
+2.020 POB is 1
+2.021 CTZ is 0..10
+2.022 DOB is 1..5
+2.024 SEX is 1
+2.025 RAC is 1
+2.026 SMT is 0..10
+2.027 HGT is 1
+2.029 WGT is 1
+2.031 EYE is 1
+2.032 HAI is 1
+2.037 RFP is 1
+2.038 DPR is 1
+2.039 EAD is 0..1
+2.040 OCP is 0..1
+2.041 RES is 0..1
+2.043 TSR is 0..1
+2.067 IMA is 0..1
+2.070 RAP is 0..1
+2.073 CRI is 1..3
+2.084 AMP is 0..13, check superscript reference 7
+2.096 RPR is 0..1
+2.098 NDR is 0..10
+2.2015 RBXD is 0..1
+2.2020 RBR is 0..9
+2.2037 ESI is 0..1
+2.2040 RBT is 0..40
+2.2062 RBNF is 0..1
+2.2063 RBOO is 0..1
+2.2064 RBUD is 0..10
+2.2065 RBC is 0..1
+2.2070 RBATN is 0..1
+2.2071 RBST is 0..1
+
+Type: NNDR
+2.001 LEN is 1
+2.002 IDC is 1
+2.005 RET is 1
+2.006 ATN is 0..1
+2.007 SCO is 0..9
+2.009 OCA is 0..1
+2.014 FBI is 0..5
+2.016 SOC is 0..4
+2.017 MNU is 0..4, check superscript reference 3
+2.018 NAM is 1
+2.019 AKA is 0..10
+2.020 POB is 1
+2.021 CTZ is 0..10
+2.022 DOB is 1..5
+2.024 SEX is 1
+2.025 RAC is 1
+2.026 SMT is 0..10
+2.027 HGT is 1
+2.029 WGT is 1
+2.031 EYE is 1
+2.032 HAI is 1
+2.037 RFP is 1
+2.038 DPR is 1
+2.039 EAD is 0..1
+2.040 OCP is 0..1
+2.041 RES is 0..1
+2.042 MIL is 0..1
+2.043 TSR is 1
+2.067 IMA is 0..1
+2.070 RAP is 0..1
+2.073 CRI is 1..3
+2.084 AMP is 0..13, check superscript reference 7
+2.096 RPR is 0..1
+2.098 NDR is 0..10
+2.2015 RBXD is 0..1
+2.2020 RBR is 0..9
+2.2037 ESI is 0..1
+2.2040 RBT is 0..40
+2.2062 RBNF is 0..1
+2.2063 RBOO is 0..1
+2.2064 RBUD is 0..10
+2.2065 RBC is 0..1
+2.2070 RBATN is 0..1
+2.2071 RBST is 0..1
+
+Type: RPIS
+2.001 LEN is 1
+2.002 IDC is 1
+2.006 ATN is 1
+2.009 OCA is 0..1
+2.018 NAM is 0..1
+2.022 DOB is 0..1
+2.024 SEX is 0..1
+2.067 IMA is 0..1
+2.070 RAP is 0..1
+2.073 CRI is 1..3
+2.084 AMP is 0..13, check superscript reference 7
+2.096 RPR is 0..1
+2.098 NDR is 1..10
+
+Type: RPISR
+2.001 LEN is 1
+2.002 IDC is 1
+2.006 ATN is 1
+2.009 OCA is 0..1
+2.014 FBI is 0..2
+2.018 NAM is 0..1
+2.020 POB is 0..1
+2.059 SRF is 1
+2.060 MSG is 0..1
+2.067 IMA is 0..1
+2.071 ACN is 0..1
+2.073 CRI is 0..3
+2.075 ERS is 0..1
+2.088 NOT is 1
+2.2023 SII is 0..1
+
+Type: SRE
+2.001 LEN is 1
+2.002 IDC is 1
+2.006 ATN is 0..1
+2.007 SCO is 0..9
+2.009 OCA is 0..1
+2.014 FBI is 0..1, check superscript reference 8
+2.015 SID is 0..1
+2.018 NAM is 1
+2.039 EAD is 0..1
+2.040 OCP is 0..1
+2.041 RES is 0..1
+2.059 SRF is 1
+2.060 MSG is 0..11
+2.073 CRI is 1..3
+2.075 ERS is 0..1
+2.087 TAA is 0..1
+2.088 NOT is 0..1
+2.2007 SDOB is 0..1
+2.2008 SNAM is 0..1
+2.2015 RBXD is 0..1
+2.2018 DNAC is 0..1
+2.2020 RBR is 0..9
+2.2023 SII is 0..1
+2.2031 BIA is 0..1
+2.2035 EVI is 0..1
+2.2037 ESI is 0..1
+2.2040 RBT is 0..40
+2.2048 RBSI is 0..1
+2.2049 RBTD is 0..1
+2.2054 RBSD is 0..1
+2.2061 BIE is 0..36
+2.2062 RBNF is 0..1
+2.2063 RBOO is 0..1
+2.2064 RBUD is 0..10
+2.2065 RBC is 0..1
+2.2067 RBDI is 0..1
+2.2070 RBATN is 0..1
+2.2071 RBST is 0..1
+
+
+</TABLE>
+
+[/PAGE]
+
+[PAGE]
+d1 summary field list identification verification transaction minimummaximum occurrence element logical record type
+
+[/PAGE]
+
+[PAGE]
+d1 summary field list identification verification transaction minimummaximum occurrence element logical record type
+
+[/PAGE]
+
+[PAGE]
+appendix reference note 1. transaction field must contain .
+2. doo portion field optional provided known .
+asl required submission contains ret yy .
+3. field mandatory applicant submission dis opm .
+4. obviously expected full name date birth unknown deceased amnesia victim known .
+field however must submitted formatted information .
+5. fbi number must present known inquiry print .
+6. field mandatory fingerprint submission nff state .
+7. field mandatory finger either amputated rolled impression made .
+8. ucn may returned depending upon transaction result .
+fbi number returned none assigned e.g .
+nonidentification ret n. ucn returned submission resulting identification criminal file nonidentification result add criminal file civil file .
+9. field returned response subject identification made .
+10. field optional unless identification made subject criminal history requested submission .
+11. cdd cct mandatory field tot .
+[/PAGE]
