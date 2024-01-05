@@ -1,0 +1,86 @@
+ ["AMN", "subtype", "has subfield", "2.001 LEN", "subfield"],
+         ["AMN", "subtype", "has subfield", "2.002 IDC", "subfield"],
+         ["AMN", "subtype", "has subfield", "2.005 RET", "subfield"],
+         ["AMN", "subtype", "has subfield", "2.006 ATN", "subfield"],
+         ["AMN", "subtype", "has subfield", "2.007 SCO", "subfield"],
+         ["AMN", "subtype", "has subfield", "2.009 OCA", "subfield"],
+         ["AMN", "subtype", "has subfield", "2.014 FBI", "subfield"],
+         ["AMN", "subtype", "has subfield", "2.015 SID", "subfield"],
+         ["AMN", "subtype", "has subfield", "2.016 SOC", "subfield"],
+         ["AMN", "subtype", "has subfield", "2.017 MNU", "subfield"],
+         ["AMN", "subtype", "has subfield", "2.018 NAM", "subfield"],
+         ["AMN", "subtype", "has subfield", "2.019 AKA", "subfield"],
+         ["AMN", "subtype", "has subfield", "2.020 POB", "subfield"],
+         ["AMN", "subtype", "has subfield", "2.021 CTZ", "subfield"],
+         ["AMN", "subtype", "has subfield", "2.022 DOB", "subfield"],
+         ["AMN", "subtype", "has subfield", "2.024 SEX", "subfield"],
+         ["AMN", "subtype", "has subfield", "2.025 RAC", "subfield"],
+         ["AMN", "subtype", "has subfield", "2.026 SMT", "subfield"],
+         ["AMN", "subtype", "has subfield", "2.027 HGT", "subfield"],
+         ["AMN", "subtype", "has subfield", "2.029 WGT", "subfield"],
+         ["AMN", "subtype", "has subfield", "2.031 EYE", "subfield"],
+         ["AMN", "subtype", "has subfield", "2.032 HAI", "subfield"],
+         ["AMN", "subtype", "has subfield", "2.035 PPA", "subfield"],
+         ["AMN", "subtype", "has subfield", "2.036 PHT", "subfield"],
+         ["AMN", "subtype", "has subfield", "2.039 EAD", "subfield"],
+         ["AMN", "subtype", "has subfield", "2.040 OCP", "subfield"],
+         ["AMN", "subtype", "has subfield", "2.041 RES", "subfield"],
+         ["AMN", "subtype", "has subfield", "2.045 DOA", "subfield"],
+         ["AMN", "subtype", "has subfield", "2.047 ASL", "subfield"],
+         ["AMN", "subtype", "has subfield", "2.051 CSL", "subfield"],
+         ["AMN", "subtype", "has subfield", "2.056 ICO", "subfield"],
+         ["AMN", "subtype", "has subfield", "2.067 IMA", "subfield"],
+         ["AMN", "subtype", "has subfield", "2.070 RAP", "subfield"],
+         ["AMN", "subtype", "has subfield", "2.073 CRI", "subfield"],
+         ["AMN", "subtype", "has subfield", "2.084 AMP", "subfield"],
+         ["AMN", "subtype", "has subfield", "2.096 RPR", "subfield"],
+         ["AMN", "subtype", "has subfield", "2.098 NDR", "subfield"],
+["CAR", "subtype", "has subfield", "2.001 LEN", "subfield"]
+["CAR", "subtype", "has subfield", "2.002 IDC", "subfield"]
+["CAR", "subtype", "has subfield", "2.005 RET", "subfield"]
+["CAR", "subtype", "has subfield", "2.006 ATN", "subfield"]
+["CAR", "subtype", "has subfield", "2.007 SCO", "subfield"]
+["CAR", "subtype", "has subfield", "2.009 OCA", "subfield"]
+["CAR", "subtype", "has subfield", "2.014 FBI", "subfield"]
+["CAR", "subtype", "has subfield", "2.015 SID", "subfield"]
+["CAR", "subtype", "has subfield", "2.016 SOC", "subfield"]
+["CAR", "subtype", "has subfield", "2.017 MNU", "subfield"]
+["CAR", "subtype", "has subfield", "2.018 NAM", "subfield"]
+["CAR", "subtype", "has subfield", "2.019 AKA", "subfield"]
+["CAR", "subtype", "has subfield", "2.020 POB", "subfield"]
+["CAR", "subtype", "has subfield", "2.021 CTZ", "subfield"]
+["CAR", "subtype", "has subfield", "2.022 DOB", "subfield"]
+["CAR", "subtype", "has subfield", "2.024 SEX", "subfield"]
+["CAR", "subtype", "has subfield", "2.025 RAC", "subfield"]
+["CAR", "subtype", "has subfield", "2.026 SMT", "subfield"]
+["CAR", "subtype", "has subfield", "2.027 HGT", "subfield"]
+["CAR", "subtype", "has subfield", "2.029 WGT", "subfield"]
+["CAR", "subtype", "has subfield", "2.031 EYE", "subfield"]
+["CAR", "subtype", "has subfield", "2.032 HAI", "subfield"]
+["CAR", "subtype", "has subfield", "2.035 PPA", "subfield"]
+["CAR", "subtype", "has subfield", "2.036 PHT", "subfield"]
+["CAR", "subtype", "has subfield", "2.039 EAD", "subfield"]
+["CAR", "subtype", "has subfield", "2.040 OCP", "subfield"]
+["CAR", "subtype", "has subfield", "2.041 RES", "subfield"]
+["CAR", "subtype", "has subfield", "2.045 DOA", "subfield"]
+["CAR", "subtype", "has subfield", "2.047 ASL", "subfield"]
+["CAR", "subtype", "has subfield", "2.051 CSL", "subfield"]
+["CAR", "subtype", "has subfield", "2.056 ICO", "subfield"]
+["CAR", "subtype", "has subfield", "2.067 IMA", "subfield"]
+["CAR", "subtype", "has subfield", "2.070 RAP", "subfield"]
+["CAR", "subtype", "has subfield", "2.073 CRI", "subfield"]
+["CAR", "subtype", "has subfield", "2.084 AMP", "subfield"]
+["CAR", "subtype", "has subfield", "2.087 TAA", "subfield"]
+["CAR", "subtype", "has subfield", "2.096 RPR", "subfield"]
+["CAR", "subtype", "has subfield", "2.098 NDR", "subfield"]
+["CAR", "subtype", "has subfield", "2.2015 RBXD", "subfield"]
+["CAR", "subtype", "has subfield", "2.2020 RBR", "subfield"]
+["CAR", "subtype", "has subfield", "2.2037 ESI", "subfield"]
+["CAR", "subtype", "has subfield", "2.2040 RBT", "subfield"]
+["CAR", "subtype", "has subfield", "2.2062 RBNF", "subfield"]
+["CAR", "subtype", "has subfield", "2.2063 RBOO", "subfield"]
+["CAR", "subtype", "has subfield", "2.2064 RBUD", "subfield"]
+["CAR", "subtype", "has subfield", "2.2065 RBC", "subfield"]
+["CAR", "subtype", "has subfield", "2.2067 RBDI", "subfield"]
+["CAR", "subtype", "has subfield", "2.2070 RBATN", "subfield"]
+["CAR", "subtype", "has subfield", "2.2071 RBST", "subfield"]

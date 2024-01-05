@@ -5,11 +5,19 @@ from langchain.chains import RetrievalQA
 from langchain.vectorstores import FAISS
 from langchain.embeddings import HuggingFaceEmbeddings
 from langchain.llms import CTransformers
-import sys
 import json
 
+from accelerate import Accelerator
 
-MODEL_PATH = "codellama-34b-instruct.Q4_K_M.gguf"
+# for tiny size documents >>>
+chunk_size = 10000
+chunk_overlap = chunk_size * 0.1
+k_vectors = 3
+context_length = 33000
+max_new_tokens = 20000
+# <<<
+
+MODEL_PATH = "W:\codellama\codellama-13b-instruct.Q4_K_M.gguf"
 
 
 def load_docs_from_jsonl(file_path):
@@ -22,54 +30,139 @@ def load_docs_from_jsonl(file_path):
     return array
 
 
-if __name__ == "__main__":
-    documents = load_docs_from_jsonl('context_embed.jsonl')
-
-    text_splitter = RecursiveCharacterTextSplitter(
-        chunk_size=10000,
-        chunk_overlap=1000)
-
-    text_chunks = text_splitter.split_documents(documents)
-
-    embeddings = HuggingFaceEmbeddings(model_name='BAAI/bge-large-en',
-                                       model_kwargs={'device': 'cuda'})
-
-    vector_store = FAISS.from_documents(text_chunks, embeddings)
-    query = "List all the Type-2 subfields for TOT CAR and show min/max occurrence. For example: 2.001 LEN, min occurrence=1, max occurrence=1"
-    docs = vector_store.similarity_search(query)
-    print(docs)
-
-    llm = CTransformers(model=MODEL_PATH,
-                        model_type="llama",
-                        config={'context_length': 40000,
-                                'temperature': 0.01,
-                                'max_new_tokens': 20000})
-
+def find_all_subtypes(vectors, model):
     template = """<<SYS>>You are a helpful, respectful, and honest assistant. Always answer as helpfully as possible
     using the context text provided. Your answers should only answer the question once and not have any text after
-    the answer is done. If a question does not make any sense, or is not factually coherent, explain why instead of
-    answering something not correct. If you don't know the answer to a question, please don't share false
-    information.<</SYS>>
+    the answer is done.<</SYS>>
 
     [INST]
     Context:{context}
     Question:{question}
     [/INST]
-    """
+"""
     qa_prompt = PromptTemplate(template=template, input_variables=['context', 'question'])
-    chain = RetrievalQA.from_chain_type(llm=llm,
+    chain = RetrievalQA.from_chain_type(llm=model,
                                         chain_type='stuff',
-                                        retriever=vector_store.as_retriever(search_kwargs={'k': 4}),
+                                        retriever=vectors.as_retriever(search_kwargs={'k': k_vectors}),
                                         return_source_documents=True,
                                         chain_type_kwargs={'prompt': qa_prompt})
 
-    while True:
-        user_input = input(f"prompt:")
-        if user_input == 'exit':
-            print('Exiting')
-            sys.exit()
-        if user_input == '':
-            continue
-        result = chain({'query': user_input})
-        print(f"Answer:{result['result']}")
-        
+    prompt = """
+    Find all logical record types presented in the tables. Output the type names, one name per row. For example:
+    
+type1
+type2
+...
+    
+    Note: Do not number the results in the list."""
+
+    result = chain({'query': prompt})
+    print(result['result'])
+    with open('subtypes_dict.txt', 'w') as file:
+        file.write(result['result'])
+    return result['result']
+
+
+def find_relation_for_subtype(vectors, model, subtype):
+    template = """<<SYS>>You are a helpful, respectful, and honest assistant.
+         Always answer as helpfully as possible using the context text provided ONLY, don't make up any answers.
+          Your answers should only answer the question once and not have any text after the answer is done.<</SYS>>
+
+    [INST]
+    context: {context}
+    prompt: {question}
+    [/INST]
+        """
+
+#     prompt = f"""
+#     Find all relations to the logical record type {subtype}.
+#     List relationships in the format: [ENTITY 1, ENTITY TYPE, RELATION, ENTITY 2, ENTITY 2 TYPE].
+#        - Do not number the results in the list.
+#        - ENTITY TYPES are: "subtype" and "subfield".
+#        - RELATIONSHIPS are defined as "has subfield" (linking a subfield to its subtype).
+#     For example:
+#
+# ["AMN", "subtype", "has subfield", "2.001 LEN", "subfield"]
+# ["AMN", "subtype", "has subfield", "2.002 IDC", "subfield"]
+# ...
+#
+# """
+
+    prompt = f"""
+    For each logical record type presents in the contex:
+    List its relationships in the format: [ENTITY 1, ENTITY TYPE, RELATION, ENTITY 2, ENTITY 2 TYPE].
+       - Do not number the results in the list.
+       - ENTITY TYPES are: "subtype" and "subfield".
+       - RELATIONSHIPS are defined as "has subfield" (linking a subfield to its subtype).
+    For example:
+
+["AMN", "subtype", "has subfield", "2.001 LEN", "subfield"]
+["AMN", "subtype", "has subfield", "2.002 IDC", "subfield"]
+...
+
+"""
+    qa_prompt = PromptTemplate(template=template, input_variables=['context', 'question'])
+    chain = RetrievalQA.from_chain_type(llm=model,
+                                        chain_type='stuff',
+                                        retriever=vectors.as_retriever(search_kwargs={'k': k_vectors}),
+                                        return_source_documents=True,
+                                        chain_type_kwargs={'prompt': qa_prompt})
+
+    result = chain({'query': prompt})
+    print(result['result'])
+    return result['result']
+
+
+if __name__ == "__main__":
+    # process_pdf("./document/type2_table.pdf")
+    documents = load_docs_from_jsonl('context_embed.jsonl')
+
+    text_splitter = RecursiveCharacterTextSplitter(
+        chunk_size=chunk_size,
+        chunk_overlap=chunk_overlap)
+
+    text_chunks = text_splitter.split_documents(documents)
+    print(len(text_chunks))
+
+    embeddings = HuggingFaceEmbeddings(model_name='BAAI/bge-large-en',
+                                       model_kwargs={'device': 'cuda'})
+
+    vector_store = FAISS.from_documents(text_chunks, embeddings)
+
+    # GPU >
+    accelerator = Accelerator()
+    config = {'max_new_tokens': max_new_tokens, 'context_length': context_length, 'temperature': 0.01, 'gpu_layers': 41}
+    # < GPU
+
+    # CPU >
+    # config = {'max_new_tokens': 100000, 'context_length': 100000, 'temperature':0.01}
+    # < CPU
+
+    llm = CTransformers(model=MODEL_PATH,
+                        model_type="llama",
+                        config=config)
+
+    # GPU >
+    llm, config = accelerator.prepare(llm, config)
+    # < GPU
+
+    # subtype_dict = find_all_subtypes(vector_store, llm)
+    subtype_dict = [item.strip().strip("\n") for item in open("subtypes_dict.txt", "r").readlines()]
+
+    relations = []
+    for subtype in subtype_dict:
+        raw_curr_relations = find_relation_for_subtype(vector_store, llm, subtype)
+        with open('curr_relations.txt', 'w') as file:
+            file.write(raw_curr_relations)
+        cleaned_curr_relations = [item.strip().strip(",").strip("[").strip("]").split(",") for item in raw_curr_relations.split("\n")]
+        formatted_json_list_curr = [{
+            "source": item[0],
+            "sourcetype": item[1],
+            "relation": item[2],
+            "target": item[3],
+            "targettype": item[4]
+        } for item in cleaned_curr_relations]
+        relations.extend(formatted_json_list_curr)
+
+    with open('./kg/kg-demo/src/kg_relations.json', 'w') as file:
+        json.dump(relations, file, indent=4)
