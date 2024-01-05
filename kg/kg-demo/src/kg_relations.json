@@ -1,0 +1,604 @@
+[
+    {
+        "source": "\"AMN\"",
+        "sourcetype": " \"subtype\"",
+        "relation": " \"has subfield\"",
+        "target": " \"2.001 LEN\"",
+        "targettype": " \"subfield\""
+    },
+    {
+        "source": "\"AMN\"",
+        "sourcetype": " \"subtype\"",
+        "relation": " \"has subfield\"",
+        "target": " \"2.002 IDC\"",
+        "targettype": " \"subfield\""
+    },
+    {
+        "source": "\"AMN\"",
+        "sourcetype": " \"subtype\"",
+        "relation": " \"has subfield\"",
+        "target": " \"2.005 RET\"",
+        "targettype": " \"subfield\""
+    },
+    {
+        "source": "\"AMN\"",
+        "sourcetype": " \"subtype\"",
+        "relation": " \"has subfield\"",
+        "target": " \"2.006 ATN\"",
+        "targettype": " \"subfield\""
+    },
+    {
+        "source": "\"AMN\"",
+        "sourcetype": " \"subtype\"",
+        "relation": " \"has subfield\"",
+        "target": " \"2.007 SCO\"",
+        "targettype": " \"subfield\""
+    },
+    {
+        "source": "\"AMN\"",
+        "sourcetype": " \"subtype\"",
+        "relation": " \"has subfield\"",
+        "target": " \"2.009 OCA\"",
+        "targettype": " \"subfield\""
+    },
+    {
+        "source": "\"AMN\"",
+        "sourcetype": " \"subtype\"",
+        "relation": " \"has subfield\"",
+        "target": " \"2.014 FBI\"",
+        "targettype": " \"subfield\""
+    },
+    {
+        "source": "\"AMN\"",
+        "sourcetype": " \"subtype\"",
+        "relation": " \"has subfield\"",
+        "target": " \"2.015 SID\"",
+        "targettype": " \"subfield\""
+    },
+    {
+        "source": "\"AMN\"",
+        "sourcetype": " \"subtype\"",
+        "relation": " \"has subfield\"",
+        "target": " \"2.016 SOC\"",
+        "targettype": " \"subfield\""
+    },
+    {
+        "source": "\"AMN\"",
+        "sourcetype": " \"subtype\"",
+        "relation": " \"has subfield\"",
+        "target": " \"2.017 MNU\"",
+        "targettype": " \"subfield\""
+    },
+    {
+        "source": "\"AMN\"",
+        "sourcetype": " \"subtype\"",
+        "relation": " \"has subfield\"",
+        "target": " \"2.018 NAM\"",
+        "targettype": " \"subfield\""
+    },
+    {
+        "source": "\"AMN\"",
+        "sourcetype": " \"subtype\"",
+        "relation": " \"has subfield\"",
+        "target": " \"2.019 AKA\"",
+        "targettype": " \"subfield\""
+    },
+    {
+        "source": "\"AMN\"",
+        "sourcetype": " \"subtype\"",
+        "relation": " \"has subfield\"",
+        "target": " \"2.020 POB\"",
+        "targettype": " \"subfield\""
+    },
+    {
+        "source": "\"AMN\"",
+        "sourcetype": " \"subtype\"",
+        "relation": " \"has subfield\"",
+        "target": " \"2.021 CTZ\"",
+        "targettype": " \"subfield\""
+    },
+    {
+        "source": "\"AMN\"",
+        "sourcetype": " \"subtype\"",
+        "relation": " \"has subfield\"",
+        "target": " \"2.022 DOB\"",
+        "targettype": " \"subfield\""
+    },
+    {
+        "source": "\"AMN\"",
+        "sourcetype": " \"subtype\"",
+        "relation": " \"has subfield\"",
+        "target": " \"2.024 SEX\"",
+        "targettype": " \"subfield\""
+    },
+    {
+        "source": "\"AMN\"",
+        "sourcetype": " \"subtype\"",
+        "relation": " \"has subfield\"",
+        "target": " \"2.025 RAC\"",
+        "targettype": " \"subfield\""
+    },
+    {
+        "source": "\"AMN\"",
+        "sourcetype": " \"subtype\"",
+        "relation": " \"has subfield\"",
+        "target": " \"2.026 SMT\"",
+        "targettype": " \"subfield\""
+    },
+    {
+        "source": "\"AMN\"",
+        "sourcetype": " \"subtype\"",
+        "relation": " \"has subfield\"",
+        "target": " \"2.027 HGT\"",
+        "targettype": " \"subfield\""
+    },
+    {
+        "source": "\"AMN\"",
+        "sourcetype": " \"subtype\"",
+        "relation": " \"has subfield\"",
+        "target": " \"2.029 WGT\"",
+        "targettype": " \"subfield\""
+    },
+    {
+        "source": "\"AMN\"",
+        "sourcetype": " \"subtype\"",
+        "relation": " \"has subfield\"",
+        "target": " \"2.031 EYE\"",
+        "targettype": " \"subfield\""
+    },
+    {
+        "source": "\"AMN\"",
+        "sourcetype": " \"subtype\"",
+        "relation": " \"has subfield\"",
+        "target": " \"2.032 HAI\"",
+        "targettype": " \"subfield\""
+    },
+    {
+        "source": "\"AMN\"",
+        "sourcetype": " \"subtype\"",
+        "relation": " \"has subfield\"",
+        "target": " \"2.035 PPA\"",
+        "targettype": " \"subfield\""
+    },
+    {
+        "source": "\"AMN\"",
+        "sourcetype": " \"subtype\"",
+        "relation": " \"has subfield\"",
+        "target": " \"2.036 PHT\"",
+        "targettype": " \"subfield\""
+    },
+    {
+        "source": "\"AMN\"",
+        "sourcetype": " \"subtype\"",
+        "relation": " \"has subfield\"",
+        "target": " \"2.039 EAD\"",
+        "targettype": " \"subfield\""
+    },
+    {
+        "source": "\"AMN\"",
+        "sourcetype": " \"subtype\"",
+        "relation": " \"has subfield\"",
+        "target": " \"2.040 OCP\"",
+        "targettype": " \"subfield\""
+    },
+    {
+        "source": "\"AMN\"",
+        "sourcetype": " \"subtype\"",
+        "relation": " \"has subfield\"",
+        "target": " \"2.041 RES\"",
+        "targettype": " \"subfield\""
+    },
+    {
+        "source": "\"AMN\"",
+        "sourcetype": " \"subtype\"",
+        "relation": " \"has subfield\"",
+        "target": " \"2.045 DOA\"",
+        "targettype": " \"subfield\""
+    },
+    {
+        "source": "\"AMN\"",
+        "sourcetype": " \"subtype\"",
+        "relation": " \"has subfield\"",
+        "target": " \"2.047 ASL\"",
+        "targettype": " \"subfield\""
+    },
+    {
+        "source": "\"AMN\"",
+        "sourcetype": " \"subtype\"",
+        "relation": " \"has subfield\"",
+        "target": " \"2.051 CSL\"",
+        "targettype": " \"subfield\""
+    },
+    {
+        "source": "\"AMN\"",
+        "sourcetype": " \"subtype\"",
+        "relation": " \"has subfield\"",
+        "target": " \"2.056 ICO\"",
+        "targettype": " \"subfield\""
+    },
+    {
+        "source": "\"AMN\"",
+        "sourcetype": " \"subtype\"",
+        "relation": " \"has subfield\"",
+        "target": " \"2.067 IMA\"",
+        "targettype": " \"subfield\""
+    },
+    {
+        "source": "\"AMN\"",
+        "sourcetype": " \"subtype\"",
+        "relation": " \"has subfield\"",
+        "target": " \"2.070 RAP\"",
+        "targettype": " \"subfield\""
+    },
+    {
+        "source": "\"AMN\"",
+        "sourcetype": " \"subtype\"",
+        "relation": " \"has subfield\"",
+        "target": " \"2.073 CRI\"",
+        "targettype": " \"subfield\""
+    },
+    {
+        "source": "\"AMN\"",
+        "sourcetype": " \"subtype\"",
+        "relation": " \"has subfield\"",
+        "target": " \"2.084 AMP\"",
+        "targettype": " \"subfield\""
+    },
+    {
+        "source": "\"AMN\"",
+        "sourcetype": " \"subtype\"",
+        "relation": " \"has subfield\"",
+        "target": " \"2.096 RPR\"",
+        "targettype": " \"subfield\""
+    },
+    {
+        "source": "\"AMN\"",
+        "sourcetype": " \"subtype\"",
+        "relation": " \"has subfield\"",
+        "target": " \"2.098 NDR\"",
+        "targettype": " \"subfield\""
+    },
+    {
+        "source": "\"CAR\"",
+        "sourcetype": " \"subtype\"",
+        "relation": " \"has subfield\"",
+        "target": " \"2.001 LEN\"",
+        "targettype": " \"subfield\""
+    },
+    {
+        "source": "\"CAR\"",
+        "sourcetype": " \"subtype\"",
+        "relation": " \"has subfield\"",
+        "target": " \"2.002 IDC\"",
+        "targettype": " \"subfield\""
+    },
+    {
+        "source": "\"CAR\"",
+        "sourcetype": " \"subtype\"",
+        "relation": " \"has subfield\"",
+        "target": " \"2.005 RET\"",
+        "targettype": " \"subfield\""
+    },
+    {
+        "source": "\"CAR\"",
+        "sourcetype": " \"subtype\"",
+        "relation": " \"has subfield\"",
+        "target": " \"2.006 ATN\"",
+        "targettype": " \"subfield\""
+    },
+    {
+        "source": "\"CAR\"",
+        "sourcetype": " \"subtype\"",
+        "relation": " \"has subfield\"",
+        "target": " \"2.007 SCO\"",
+        "targettype": " \"subfield\""
+    },
+    {
+        "source": "\"CAR\"",
+        "sourcetype": " \"subtype\"",
+        "relation": " \"has subfield\"",
+        "target": " \"2.009 OCA\"",
+        "targettype": " \"subfield\""
+    },
+    {
+        "source": "\"CAR\"",
+        "sourcetype": " \"subtype\"",
+        "relation": " \"has subfield\"",
+        "target": " \"2.014 FBI\"",
+        "targettype": " \"subfield\""
+    },
+    {
+        "source": "\"CAR\"",
+        "sourcetype": " \"subtype\"",
+        "relation": " \"has subfield\"",
+        "target": " \"2.015 SID\"",
+        "targettype": " \"subfield\""
+    },
+    {
+        "source": "\"CAR\"",
+        "sourcetype": " \"subtype\"",
+        "relation": " \"has subfield\"",
+        "target": " \"2.016 SOC\"",
+        "targettype": " \"subfield\""
+    },
+    {
+        "source": "\"CAR\"",
+        "sourcetype": " \"subtype\"",
+        "relation": " \"has subfield\"",
+        "target": " \"2.017 MNU\"",
+        "targettype": " \"subfield\""
+    },
+    {
+        "source": "\"CAR\"",
+        "sourcetype": " \"subtype\"",
+        "relation": " \"has subfield\"",
+        "target": " \"2.018 NAM\"",
+        "targettype": " \"subfield\""
+    },
+    {
+        "source": "\"CAR\"",
+        "sourcetype": " \"subtype\"",
+        "relation": " \"has subfield\"",
+        "target": " \"2.019 AKA\"",
+        "targettype": " \"subfield\""
+    },
+    {
+        "source": "\"CAR\"",
+        "sourcetype": " \"subtype\"",
+        "relation": " \"has subfield\"",
+        "target": " \"2.020 POB\"",
+        "targettype": " \"subfield\""
+    },
+    {
+        "source": "\"CAR\"",
+        "sourcetype": " \"subtype\"",
+        "relation": " \"has subfield\"",
+        "target": " \"2.021 CTZ\"",
+        "targettype": " \"subfield\""
+    },
+    {
+        "source": "\"CAR\"",
+        "sourcetype": " \"subtype\"",
+        "relation": " \"has subfield\"",
+        "target": " \"2.022 DOB\"",
+        "targettype": " \"subfield\""
+    },
+    {
+        "source": "\"CAR\"",
+        "sourcetype": " \"subtype\"",
+        "relation": " \"has subfield\"",
+        "target": " \"2.024 SEX\"",
+        "targettype": " \"subfield\""
+    },
+    {
+        "source": "\"CAR\"",
+        "sourcetype": " \"subtype\"",
+        "relation": " \"has subfield\"",
+        "target": " \"2.025 RAC\"",
+        "targettype": " \"subfield\""
+    },
+    {
+        "source": "\"CAR\"",
+        "sourcetype": " \"subtype\"",
+        "relation": " \"has subfield\"",
+        "target": " \"2.026 SMT\"",
+        "targettype": " \"subfield\""
+    },
+    {
+        "source": "\"CAR\"",
+        "sourcetype": " \"subtype\"",
+        "relation": " \"has subfield\"",
+        "target": " \"2.027 HGT\"",
+        "targettype": " \"subfield\""
+    },
+    {
+        "source": "\"CAR\"",
+        "sourcetype": " \"subtype\"",
+        "relation": " \"has subfield\"",
+        "target": " \"2.029 WGT\"",
+        "targettype": " \"subfield\""
+    },
+    {
+        "source": "\"CAR\"",
+        "sourcetype": " \"subtype\"",
+        "relation": " \"has subfield\"",
+        "target": " \"2.031 EYE\"",
+        "targettype": " \"subfield\""
+    },
+    {
+        "source": "\"CAR\"",
+        "sourcetype": " \"subtype\"",
+        "relation": " \"has subfield\"",
+        "target": " \"2.032 HAI\"",
+        "targettype": " \"subfield\""
+    },
+    {
+        "source": "\"CAR\"",
+        "sourcetype": " \"subtype\"",
+        "relation": " \"has subfield\"",
+        "target": " \"2.035 PPA\"",
+        "targettype": " \"subfield\""
+    },
+    {
+        "source": "\"CAR\"",
+        "sourcetype": " \"subtype\"",
+        "relation": " \"has subfield\"",
+        "target": " \"2.036 PHT\"",
+        "targettype": " \"subfield\""
+    },
+    {
+        "source": "\"CAR\"",
+        "sourcetype": " \"subtype\"",
+        "relation": " \"has subfield\"",
+        "target": " \"2.039 EAD\"",
+        "targettype": " \"subfield\""
+    },
+    {
+        "source": "\"CAR\"",
+        "sourcetype": " \"subtype\"",
+        "relation": " \"has subfield\"",
+        "target": " \"2.040 OCP\"",
+        "targettype": " \"subfield\""
+    },
+    {
+        "source": "\"CAR\"",
+        "sourcetype": " \"subtype\"",
+        "relation": " \"has subfield\"",
+        "target": " \"2.041 RES\"",
+        "targettype": " \"subfield\""
+    },
+    {
+        "source": "\"CAR\"",
+        "sourcetype": " \"subtype\"",
+        "relation": " \"has subfield\"",
+        "target": " \"2.045 DOA\"",
+        "targettype": " \"subfield\""
+    },
+    {
+        "source": "\"CAR\"",
+        "sourcetype": " \"subtype\"",
+        "relation": " \"has subfield\"",
+        "target": " \"2.047 ASL\"",
+        "targettype": " \"subfield\""
+    },
+    {
+        "source": "\"CAR\"",
+        "sourcetype": " \"subtype\"",
+        "relation": " \"has subfield\"",
+        "target": " \"2.051 CSL\"",
+        "targettype": " \"subfield\""
+    },
+    {
+        "source": "\"CAR\"",
+        "sourcetype": " \"subtype\"",
+        "relation": " \"has subfield\"",
+        "target": " \"2.056 ICO\"",
+        "targettype": " \"subfield\""
+    },
+    {
+        "source": "\"CAR\"",
+        "sourcetype": " \"subtype\"",
+        "relation": " \"has subfield\"",
+        "target": " \"2.067 IMA\"",
+        "targettype": " \"subfield\""
+    },
+    {
+        "source": "\"CAR\"",
+        "sourcetype": " \"subtype\"",
+        "relation": " \"has subfield\"",
+        "target": " \"2.070 RAP\"",
+        "targettype": " \"subfield\""
+    },
+    {
+        "source": "\"CAR\"",
+        "sourcetype": " \"subtype\"",
+        "relation": " \"has subfield\"",
+        "target": " \"2.073 CRI\"",
+        "targettype": " \"subfield\""
+    },
+    {
+        "source": "\"CAR\"",
+        "sourcetype": " \"subtype\"",
+        "relation": " \"has subfield\"",
+        "target": " \"2.084 AMP\"",
+        "targettype": " \"subfield\""
+    },
+    {
+        "source": "\"CAR\"",
+        "sourcetype": " \"subtype\"",
+        "relation": " \"has subfield\"",
+        "target": " \"2.087 TAA\"",
+        "targettype": " \"subfield\""
+    },
+    {
+        "source": "\"CAR\"",
+        "sourcetype": " \"subtype\"",
+        "relation": " \"has subfield\"",
+        "target": " \"2.096 RPR\"",
+        "targettype": " \"subfield\""
+    },
+    {
+        "source": "\"CAR\"",
+        "sourcetype": " \"subtype\"",
+        "relation": " \"has subfield\"",
+        "target": " \"2.098 NDR\"",
+        "targettype": " \"subfield\""
+    },
+    {
+        "source": "\"CAR\"",
+        "sourcetype": " \"subtype\"",
+        "relation": " \"has subfield\"",
+        "target": " \"2.2015 RBXD\"",
+        "targettype": " \"subfield\""
+    },
+    {
+        "source": "\"CAR\"",
+        "sourcetype": " \"subtype\"",
+        "relation": " \"has subfield\"",
+        "target": " \"2.2020 RBR\"",
+        "targettype": " \"subfield\""
+    },
+    {
+        "source": "\"CAR\"",
+        "sourcetype": " \"subtype\"",
+        "relation": " \"has subfield\"",
+        "target": " \"2.2037 ESI\"",
+        "targettype": " \"subfield\""
+    },
+    {
+        "source": "\"CAR\"",
+        "sourcetype": " \"subtype\"",
+        "relation": " \"has subfield\"",
+        "target": " \"2.2040 RBT\"",
+        "targettype": " \"subfield\""
+    },
+    {
+        "source": "\"CAR\"",
+        "sourcetype": " \"subtype\"",
+        "relation": " \"has subfield\"",
+        "target": " \"2.2062 RBNF\"",
+        "targettype": " \"subfield\""
+    },
+    {
+        "source": "\"CAR\"",
+        "sourcetype": " \"subtype\"",
+        "relation": " \"has subfield\"",
+        "target": " \"2.2063 RBOO\"",
+        "targettype": " \"subfield\""
+    },
+    {
+        "source": "\"CAR\"",
+        "sourcetype": " \"subtype\"",
+        "relation": " \"has subfield\"",
+        "target": " \"2.2064 RBUD\"",
+        "targettype": " \"subfield\""
+    },
+    {
+        "source": "\"CAR\"",
+        "sourcetype": " \"subtype\"",
+        "relation": " \"has subfield\"",
+        "target": " \"2.2065 RBC\"",
+        "targettype": " \"subfield\""
+    },
+    {
+        "source": "\"CAR\"",
+        "sourcetype": " \"subtype\"",
+        "relation": " \"has subfield\"",
+        "target": " \"2.2067 RBDI\"",
+        "targettype": " \"subfield\""
+    },
+    {
+        "source": "\"CAR\"",
+        "sourcetype": " \"subtype\"",
+        "relation": " \"has subfield\"",
+        "target": " \"2.2070 RBATN\"",
+        "targettype": " \"subfield\""
+    },
+    {
+        "source": "\"CAR\"",
+        "sourcetype": " \"subtype\"",
+        "relation": " \"has subfield\"",
+        "target": " \"2.2071 RBST\"",
+        "targettype": " \"subfield\""
+    }
+]
