@@ -74,23 +74,9 @@ def find_relation_for_subtype(vectors, model, subtype):
     [/INST]
         """
 
-#     prompt = f"""
-#     Find all relations to the logical record type {subtype}.
-#     List relationships in the format: [ENTITY 1, ENTITY TYPE, RELATION, ENTITY 2, ENTITY 2 TYPE].
-#        - Do not number the results in the list.
-#        - ENTITY TYPES are: "subtype" and "subfield".
-#        - RELATIONSHIPS are defined as "has subfield" (linking a subfield to its subtype).
-#     For example:
-#
-# ["AMN", "subtype", "has subfield", "2.001 LEN", "subfield"]
-# ["AMN", "subtype", "has subfield", "2.002 IDC", "subfield"]
-# ...
-#
-# """
-
     prompt = f"""
-    For each logical record type presents in the contex:
-    List its relationships in the format: [ENTITY 1, ENTITY TYPE, RELATION, ENTITY 2, ENTITY 2 TYPE].
+    Find all relations to the logical record type {subtype}.
+    List relationships in the format: [ENTITY 1, ENTITY TYPE, RELATION, ENTITY 2, ENTITY 2 TYPE].
        - Do not number the results in the list.
        - ENTITY TYPES are: "subtype" and "subfield".
        - RELATIONSHIPS are defined as "has subfield" (linking a subfield to its subtype).
@@ -101,6 +87,20 @@ def find_relation_for_subtype(vectors, model, subtype):
 ...
 
 """
+
+#     prompt = f"""
+#     For each logical record type presents in the contex:
+#     List its relationships in the format: [ENTITY 1, ENTITY TYPE, RELATION, ENTITY 2, ENTITY 2 TYPE].
+#        - Do not number the results in the list.
+#        - ENTITY TYPES are: "subtype" and "subfield".
+#        - RELATIONSHIPS are defined as "has subfield" (linking a subfield to its subtype).
+#     For example:
+#
+# ["AMN", "subtype", "has subfield", "2.001 LEN", "subfield"]
+# ["AMN", "subtype", "has subfield", "2.002 IDC", "subfield"]
+# ...
+#
+# """
     qa_prompt = PromptTemplate(template=template, input_variables=['context', 'question'])
     chain = RetrievalQA.from_chain_type(llm=model,
                                         chain_type='stuff',
